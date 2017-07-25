@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<!-- HEADER -->
+    {% include 'particles/header.html' %}
+
+	<div id="ww">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<h1>Bem-Vindo ao DanzOu</h1>
+
+					<div class="row">
+			        	<div class="col-sm-6 col-sm-offset-3">
+			            	<div id="imaginary_container"> 
+			                	<div class="input-group stylish-input-group">
+			                   		<input type="text" class="form-control" placeholder="Buscar..." >
+			                   		<span class="input-group-addon">
+			                        	<button type="search">
+			                            	<span class="glyphicon glyphicon-search"></span>
+			                        	</button>  
+			                    	</span>
+			                	</div>
+			            	</div>
+			        	</div>
+					</div>
+					<br>
+					<p>Espero que encontre seu anime favorito!</p>
+				</div>
+			</div>
+	    </div> 
+	</div>
+	
+	<div class="col-lg-8 col-lg-offset-2 centered">
+			<h3>Lançamentos!</h3>
+	</div>
+
+	<div class="container pt">
+		<div class="row mt centered">	
+			<div class="col-lg-4">
+				<a class="zoom green" href="work01.html"><img class="img-responsive" src="" alt="" /></a>
+				<p>APE</p>
+			</div>
+			<div class="col-lg-4">
+				<a class="zoom green" href="work01.html"><img class="img-responsive" src="" alt="" /></a>
+				<p>RAIDERS</p>
+			</div>
+			<div class="col-lg-4">
+				<a class="zoom green" href="work01.html"><img class="img-responsive" src="" alt="" /></a>
+				<p>VIKINGS</p>
+			</div>
+		</div><!-- /row -->
+		<div class="row mt centered">	
+			<div class="col-lg-4">
+				<a class="zoom green" href="work01.html"><img class="img-responsive" src="" alt="" /></a>
+				<p>YODA</p>
+			</div>
+			<div class="col-lg-4">
+				<a class="zoom green" href="work01.html"><img class="img-responsive" src="" alt="" /></a>
+				<p>EMPERORS</p>
+			</div>
+			<div class="col-lg-4">
+				<a class="zoom green" href="work01.html"><img class="img-responsive" src="" alt="" /></a>
+				<p>CHIEFS</p>
+			</div>
+		</div>
+	</div>
+
+    {% include 'particles/footer.html' %}
+
+{% endblock %}
