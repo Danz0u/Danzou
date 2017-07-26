@@ -15,4 +15,5 @@ dev*.py
 /lib/mysqlx/expr_backup.py
 /lib/test.py
 /media/
+/media/anime/
 /static/img

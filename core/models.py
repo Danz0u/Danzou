@@ -6,6 +6,7 @@ from django.utils.text import slugify
 
 class Anime(models.Model):
     title = models.CharField(_('Name'), max_length=100)
+    img = models.ImageField(_('Image'), upload_to='anime')
     sinopse = models.TextField(_('Sinopse'))
     file_size = models.CharField(_('File Size'), max_length=50)
     duration = models.CharField(_('Duration'), max_length=50)
