@@ -11,10 +11,10 @@ class Anime(models.Model):
     file_size = models.CharField(_('File Size'), max_length=50)
     duration = models.CharField(_('Duration'), max_length=50)
     file_format = models.CharField(
-        _('File Format'), max_length=50, unique=True)
-    file_audio = models.CharField(_('File Audio'), max_length=50, unique=True)
+        _('File Format'), max_length=50)
+    file_audio = models.CharField(_('File Audio'), max_length=50)
     file_subtitles = models.CharField(
-        _('File Subtitles'), max_length=50, unique=True)
+        _('File Subtitles'), max_length=50)
     url = models.URLField(_('Link Download'), unique=True)
     slug = models.SlugField(_('Slug'), max_length=140, unique=True, blank=True)
 
@@ -50,7 +50,7 @@ class Anime(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('anime:detail', kargs={'slug': self.slug})
+        return reverse("anime:detail", kwargs={'slug': self.slug})
 
 
 class RelatedBugs(models.Model):

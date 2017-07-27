@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<!-- HEADER -->
+	{% include 'particles/header.html' %}
+
+	<div id="white">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+
+					<p><bd>{{anime.created_at}}</bd></p>
+					<h4>{{anime.title}}</h4> 
+					<hr>
+					<p><img class="img-responsive" src="{{anime.img.url}}" alt=""></p>
+					<p><ba>Sinopse</ba><br>{{anime.sinopse}}</p>
+					<br>
+					<p><bt>Tamanho do Arquivo: {{anime.file_size}}</bt></p>
+					<p><bt>Duração: {{anime.duration}}</bt></p>
+					<p><bt>Formato do Arquivo: {{anime.file_format}}</bt></p>
+					<p><bt>Formato de Audio: {{anime.file_audio}}</bt></p>
+					<p><bt>Legendas: {{anime.file_subtitles}}</bt></p>
+					<br>
+					<p>
+						<bt>
+							Categorias: <a href="#">Wordpress</a> - <a href="#">Web Design</a>
+						</bt>
+					</p>
+					<hr>
+					<p><a href="{{anime.url}}">Download</a></p>
+				</div>
+			</div>
+			</div> 
+	</div>
+
+	<!-- FOOTER -->
+	{% include 'particles/footer.html' %}
+
+{% endblock %}

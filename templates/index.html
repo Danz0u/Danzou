@@ -8,7 +8,7 @@
 	<div id="ww">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
+				<div class="col-lg-8 col-lg-offset-2 centered"> 
 
 					<h1>Bem-Vindo ao DanzOu</h1>
 
@@ -16,7 +16,9 @@
 			    	<div class="col-sm-6 col-sm-offset-3">
 			      	<div id="imaginary_container"> 
 			          <div class="input-group stylish-input-group">
-			            <input type="text" class="form-control" placeholder="Buscar..." >
+			            <form type="GET" action="{% url 'search-anime' %}">
+			            	<input type="text" class="form-control" name="search_box" id="search_box" placeholder="Buscar..." >
+			            </form>
 			            <span class="input-group-addon">
 			              <button type="search">
 			              	<span class="glyphicon glyphicon-search"></span>
@@ -43,7 +45,7 @@
 		<div class="row mt centered">	
 			{% for anime in object_list %}
 				<div class="col-lg-4">
-					<a class="" href="">
+					<a class="" href="{% url 'anime-detail' anime.slug %}">
 						<img class="img-responsive" src="{{anime.img.url}}" alt="" />
 						<p><strong>{{anime.title}}</strong></p>
 					</a>
@@ -51,8 +53,6 @@
 			{% endfor %}
 		</div>
 	</div>
-
-	{% else %}
 
 	{% endif %}
 
