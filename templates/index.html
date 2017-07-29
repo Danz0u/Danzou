@@ -3,59 +3,37 @@
 {% block content %}
 	
 	<!-- HEADER -->
-  {% include 'particles/header.html' %}
+{% include 'particles/header.html' %}
 
-	<div id="ww">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered"> 
+  <div id="ww">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-lg-8 col-lg-offset-2 centered"> 
+  				<h1>Bem-Vindo ao DanzOu</h1>
 
-					<h1>Bem-Vindo ao DanzOu</h1>
+  				<div class="row">
+  				  <div class="col-sm-6 col-sm-offset-3">
+  				    <div id="imaginary_container"> 
+  				      <div class="input-group stylish-input-group">
+  				        <form type="GET" action="{% url 'search-anime' %}">
+  				          <input type="text" class="form-control" name="search_box" id="search_box" placeholder="Buscar..." >
+  				        </form>
+  				        <span class="input-group-addon">
+  				          <button type="search">
+  				        		<span class="glyphicon glyphicon-search"></span>
+  				          </button>  
+  				        </span>
+  				      </div>
+  				    </div>
+  				  </div>
+  				</div>
+  				<br>
+  				<p>Espero que tenha encontrado seu Anime favorito!</p>
+  			</div>
+  		</div>
+  	</div> 
+  </div>
 
-					<div class="row">
-			    	<div class="col-sm-6 col-sm-offset-3">
-			      	<div id="imaginary_container"> 
-			          <div class="input-group stylish-input-group">
-			            <form type="GET" action="{% url 'search-anime' %}">
-			            	<input type="text" class="form-control" name="search_box" id="search_box" placeholder="Buscar..." >
-			            </form>
-			            <span class="input-group-addon">
-			              <button type="search">
-			              	<span class="glyphicon glyphicon-search"></span>
-			              </button>  
-			           	</span>
-			          </div>
-			        </div>
-			      </div>
-					</div>
-					<br>
-					<p>Espero que tenha encontrado seu Anime favorito!</p>
-				</div>
-			</div>
-	  </div> 
-	</div>
-
-	<div class="col-lg-8 col-lg-offset-2 centered">
-		<h3>Lançamentos!</h3><br><hr>
-	</div>
-
-	{% if object_list %}
-
-	<div class="container pt">
-		<div class="row mt centered">	
-			{% for anime in object_list %}
-				<div class="col-lg-4">
-					<a class="" href="{% url 'anime-detail' anime.slug %}">
-						<img class="img-responsive" src="{{anime.img.url}}" alt="" />
-						<p><strong>{{anime.title}}</strong></p>
-					</a>
-				</div>
-			{% endfor %}
-		</div>
-	</div>
-
-	{% endif %}
-
-  {% include 'particles/footer.html' %}
+{% include 'particles/footer.html' %}
 
 {% endblock %}

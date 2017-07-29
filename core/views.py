@@ -12,17 +12,14 @@ class ThanksView(TemplateView):
     template_name = 'messages/thanks.html'
 
 
-class IndexView(ListView):
-    model = Anime
+class IndexView(TemplateView):
     template_name = "index.html"
-
-    def get_queryset(self, **kwargs):
-        return Anime.objects.all().order_by('-created_at')[:6]
 
 
 class AnimeListView(ListView):
     model = Anime
     template_name = "animes.html"
+    paginate_by = 3
 
     def get_queryset(self, **kwargs):
         return Anime.objects.all().order_by('title')

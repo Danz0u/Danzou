@@ -43,7 +43,7 @@ class Anime(models.Model):
 
     @property
     def time_ago(self):
-        time_ago = arrow.get(self.created_at)
+        time_ago = arrow.get(self.updated_at)
         return time_ago.humanize(locale='pt')
 
     def __str__(self):
