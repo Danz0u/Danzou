@@ -48,24 +48,3 @@ class Anime(models.Model):
 
     def __str__(self):
         return self.title
-
-    def get_absolute_url(self):
-        return reverse("anime:detail", kwargs={'slug': self.slug})
-
-
-class RelatedBugs(models.Model):
-    name = models.CharField(_('Name'), max_length=30)
-    email = models.EmailField(_('Email'), max_length=100)
-    subject = models.CharField(_('Subject'), max_length=200)
-    message = models.TextField(_('Message'), max_length=250)
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ['-created_at']
-        verbose_name = _('Related Bugs')
-        verbose_name_plural = _('Relateds Bugs')
-
-    def __str__(self):
-        return self.subject
