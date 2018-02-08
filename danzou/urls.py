@@ -1,21 +1,18 @@
-from django.conf.urls import url, include
 from django.contrib import admin
+
+from django.urls import path, include
+
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import HomeView
+
+from django.views import generic
 
 
 urlpatterns = [
-
-    # Core
-    url(r'^admin/', admin.site.urls),
-
-    # Home
-    url(r'^$', HomeView.as_view(), name='home'),
-
-    # API Rest
-    url(r'^api/', include('core.api.urls')),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
+    path('api-auth/', include('rest_framework.urls'), name='api_auth'),
+    path('', generic.TemplateView.as_view(template_name='base.html')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

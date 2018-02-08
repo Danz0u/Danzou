@@ -1,2 +1,2 @@
 # Danzou
- Danzou website, a central of animes
+ Danzou api, a central of animes
